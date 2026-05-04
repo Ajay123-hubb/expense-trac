@@ -1,0 +1,59 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f0f2f5; color: #333; }
+
+.auth-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #6c63ff, #48c6ef); }
+.auth-box { background: white; padding: 40px; border-radius: 16px; width: 380px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); text-align: center; }
+.auth-box h1 { font-size: 1.8rem; color: #6c63ff; margin-bottom: 6px; }
+.auth-box h2 { font-size: 1.1rem; color: #666; margin-bottom: 24px; }
+.error { background: #fdecea; color: #e74c3c; padding: 10px; border-radius: 8px; margin-bottom: 16px; font-size: 0.85rem; }
+.switch { margin-top: 16px; font-size: 0.85rem; color: #888; }
+.switch a { color: #6c63ff; text-decoration: none; font-weight: bold; }
+
+header { background: #6c63ff; color: white; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 1.5rem; }
+.header-right { display: flex; align-items: center; gap: 16px; font-size: 0.9rem; }
+.logout-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; }
+.logout-btn:hover { background: rgba(255,255,255,0.35); }
+
+.summary { display: flex; justify-content: center; gap: 20px; padding: 30px 40px; flex-wrap: wrap; }
+.card { background: white; border-radius: 12px; padding: 24px 40px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.08); min-width: 200px; }
+.card h3 { font-size: 0.85rem; color: #888; margin-bottom: 8px; text-transform: uppercase; }
+.amount { font-size: 1.8rem; font-weight: bold; }
+.income .amount { color: #2ecc71; }
+.balance .amount { color: #6c63ff; }
+.expense .amount { color: #e74c3c; }
+
+.main { display: flex; gap: 24px; padding: 0 40px 30px; flex-wrap: wrap; }
+.form-box, .chart-box { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); flex: 1; min-width: 300px; }
+.form-box h2, .chart-box h2 { margin-bottom: 16px; font-size: 1rem; color: #444; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 0.78rem; color: #888; margin-bottom: 5px; text-transform: uppercase; }
+.form-group input, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; outline: none; }
+.form-group input:focus, .form-group select:focus { border-color: #6c63ff; }
+
+.toggle { display: flex; gap: 10px; margin-bottom: 16px; }
+.toggle button { flex: 1; padding: 10px; border: 2px solid #ddd; background: white; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+.active-expense { background: #fdecea !important; border-color: #e74c3c !important; color: #e74c3c !important; font-weight: bold; }
+.active-income  { background: #eafaf1 !important; border-color: #2ecc71 !important; color: #2ecc71 !important; font-weight: bold; }
+
+.btn { width: 100%; padding: 12px; background: #6c63ff; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; }
+.btn:hover { background: #574fd6; }
+.msg { text-align: center; margin-top: 10px; font-size: 0.85rem; min-height: 20px; }
+
+.history { background: white; border-radius: 12px; padding: 24px; margin: 0 40px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.tx-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.tx-header h2 { font-size: 1rem; color: #444; }
+.search-bar { padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; width: 250px; font-size: 0.9rem; outline: none; }
+.tx-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-radius: 10px; background: #f9f9f9; margin-bottom: 10px; border-left: 4px solid #ddd; }
+.tx-item.income  { border-left-color: #2ecc71; }
+.tx-item.expense { border-left-color: #e74c3c; }
+.tx-desc { font-weight: 600; font-size: 0.95rem; }
+.tx-meta { font-size: 0.78rem; color: #999; margin-top: 3px; }
+.tx-right { display: flex; align-items: center; gap: 14px; }
+.tx-amount { font-weight: bold; font-size: 1rem; }
+.tx-amount.income  { color: #2ecc71; }
+.tx-amount.expense { color: #e74c3c; }
+.del-btn { background: none; border: none; color: #ccc; cursor: pointer; font-size: 1rem; }
+.del-btn:hover { color: #e74c3c; }
+.empty { text-align: center; color: #aaa; padding: 30px; }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Dashboard | SpendSense</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <h1>💸 SpendSense</h1>
+  <div class="header-right">
+    <span>👤 {{ username }}</span>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </div>
+</header>
+
+<div class="summary">
+  <div class="card income">
+    <h3>Total Income</h3>
+    <div class="amount" id="t-income">₹0.00</div>
+  </div>
+  <div class="card balance">
+    <h3>Balance</h3>
+    <div class="amount" id="t-balance">₹0.00</div>
+  </div>
+  <div class="card expense">
+    <h3>Total Expenses</h3>
+    <div class="amount" id="t-expense">₹0.00</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="form-box">
+    <h2>Add Transaction</h2>
+    <div class="toggle">
+      <button id="btn-expense" class="active-expense" onclick="setType('expense')">💸 Expense</button>
+      <button id="btn-income" onclick="setType('income')">💰 Income</button>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" id="desc" placeholder="e.g. Lunch at Subway"/>
+    </div>
+    <div class="form-group">
+      <label>Amount (₹)</label>
+      <input type="number" id="amt" placeholder="0.00" min="0"/>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="cat">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+        <option>Entertainment</option>
+        <option>Health</option>
+        <option>Education</option>
+        <option>Bills</option>
+        <option>Salary</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" id="date"/>
+    </div>
+    <button class="btn" onclick="addTx()">+ Add Transaction</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <div class="chart-box">
+    <h2>Category Breakdown</h2>
+    <canvas id="donut"></canvas>
+    <h2 style="margin-top:20px">Income vs Expenses</h2>
+    <canvas id="bar"></canvas>
+  </div>
+</div>
+
+<div class="history">
+  <div class="tx-header">
+    <h2>Transaction History</h2>
+    <input class="search-bar" type="text" id="search" placeholder="🔍 Search..." oninput="filterTx()"/>
+  </div>
+  <div id="tx-list"></div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
